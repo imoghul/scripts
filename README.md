@@ -1,5 +1,14 @@
 # My Scripts
 
+## Install Dependencies
+Install astyle: http://astyle.sourceforge.net/install.html
+Install nodejs
+```console
+python3 -m pip install black
+npm install js-beautify
+python3 -m pip install datetime
+```
+
 ## Scripts
 * aliases : source this in zshrc
 * astyle : format your code
