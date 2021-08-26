@@ -36,6 +36,11 @@ for e in scannedPDFs:
     if timeDiff.total_seconds() / 3600 > 1:
         tbRem.append(e)
 for i in tbRem:
+    print(str(i)+" will be deleted")
+
+if(input("Continue? [(y)/n]: ")== "n"):
+    exit()
+for i in tbRem:
     string = (
         "mv "
         + formatIt(i)
@@ -43,6 +48,4 @@ for i in tbRem:
         + formatIt(i).replace("/Users/ibrahim/Downloads/", "")
     )  # "mv "+str(i).replace(" ","\ ").replace(")","\)")+" /Users/ibrahim/pdfs/"+str(i).replace(" ","\ ").replace(")","\)").replace("/Users/ibrahim/Downloads/","")
     os.system(string)
-    print(str(i) + " was deleted")
-input("presss enter to confirm")
 exit()
