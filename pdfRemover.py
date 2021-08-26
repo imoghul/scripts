@@ -35,6 +35,7 @@ for e in scannedPDFs:
     timeDiff = currTime - createdTime
     if timeDiff.total_seconds() / 3600 > 1:
         tbRem.append(e)
+if(len(tbRem)==0): exit()
 for i in tbRem:
     print(str(i)+" will be deleted")
 
