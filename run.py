@@ -6,7 +6,7 @@ import pathlib
 
 
 parser = argparse.ArgumentParser()
-
+# parser.add_argument()
 
 
 def formatIt(string):
@@ -31,82 +31,58 @@ def confirm():
         inp = str(input("would u like to proceed?[y/n]: "))
 
 
-def getFile():  # returns file with extension
-    elements = path.split("/")
-    return elements[len(elements) - 1]
-
-
-def getPathTo():  # returns entire path to file without file
-    return path.replace(getFile(), "")
-
-
-def getExtension():  # returns extension
-    if not getFile().find(".") == -1:
-        return getFile().split(".")[1]
-    return ""
-
-
-def getFileNoExtension():  # returns file without extension
-    if not getFile().find(".") == -1:
-        return getFile().split(".")[0]
-    return ""
-
-
 def goTo(pathing):  # goes to the path
     os.chdir(pathing)
 
 
-def runJava():
-    return "     javac " + getFile() + " && java " + getFileNoExtension()
+file = path.split("/")[len(path.split("/")) - 1]
 
+pathTo = path.replace(file, "")
 
-def runCpp():
-    return "     g++ -o " + getFileNoExtension() + " " + getFile() + " && ./" + getFileNoExtension()
+extention = file.split(".")[1] if not file.find(".") == -1 else ""
 
-
-def runC():
-    return "     gcc -o " + getFileNoExtension() + " " + getFile() + " && ./" + getFileNoExtension()
-
-
-def runPy():
-    return "     python3 " + getFile()
-
-
-def runJs():
-    return "      node " + getFile()
-
-
-def runMatlab():
-    return '      /Applications/MATLAB_R2021a.app/bin/matlab -nodesktop -r "run ' + getFile() + '"'
+fileNoExtension = file.split(".")[0] if not file.find(".") == -1 else ""
 
 
 def runSmart(extension):
     command = None
     if extension == "java":
-        command = runJava()
+        command = "     javac " + file + " && java " + fileNoExtension
     elif extension == "cpp":
-        command = runCpp()
+        command = (
+            "     g++ -o " + fileNoExtension + " " + file + " && ./" + fileNoExtension
+        )
     elif extension == "c":
-        command = runC()
+        command = (
+            "     gcc -o " + fileNoExtension + " " + file + " && ./" + fileNoExtension
+        )
     elif extension == "py":
-        command = runPy()
+        command = "     python3 " + file
     elif extension == "js":
-        command = runJs()
+        command = "      node " + file
+    elif extension == "bash" or extension == "sh":
+        command = "      bash " + file
     elif extension == "m":
-        command = runMatlab()
+        command = (
+            '      /Applications/MATLAB_R2021a.app/bin/matlab -nodesktop -r "run '
+            + file
+            + '"'
+        )
     else:
         print("please use a valid extension")
-    if(command!=None):os.system(command)
+        return
+    if command != None:
+        os.system(command)
 
 
 def removeExecutables():
     os.system("find . -name '*.class' -delete")
-    os.system("find . -name '%s' -delete"%getFileNoExtension())
+    os.system("find . -name '%s' -delete" % fileNoExtension)
 
 
 print("\n")
-goTo(getPathTo())
-runSmart(getExtension())
+goTo(pathTo)
+runSmart(extention)
 removeExecutables()
 print("\n")
 exit()
