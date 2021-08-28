@@ -2,28 +2,17 @@
 import sys
 import os
 import argparse
-import pathlib
-
-
-parser = argparse.ArgumentParser()
-# parser.add_argument()
 
 
 def formatIt(string):
     string = str(string)
     return string.replace(" ", "\ ").replace(")", "\)").replace("(", "\(")
 
-
-directory = os.getcwd() + "/"
-path = directory
-for i in range(1, len(sys.argv)):
-    if i > 1:
-        path += " " + sys.argv[i]
-    else:
-        path += sys.argv[i]
-# if len(sys.argv) > 2:
-#     print(sys.argv[2:])
-
+path = os.getcwd() + "/" + sys.argv[1]
+args = ""
+for i in range(2,len(sys.argv)):
+    args+=" "+sys.argv[i]
+print(args)
 
 def confirm():
     inp = str(input("would u like to proceed?[y/n]: "))
@@ -71,6 +60,7 @@ def runSmart(extension):
     else:
         print("please use a valid extension")
         return
+    command += args
     if command != None:
         os.system(command)
 
