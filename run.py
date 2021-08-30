@@ -12,7 +12,6 @@ path = os.getcwd() + "/" + sys.argv[1]
 args = ""
 for i in range(2,len(sys.argv)):
     args+=" "+sys.argv[i]
-print(args)
 
 def confirm():
     inp = str(input("would u like to proceed?[y/n]: "))
