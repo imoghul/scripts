@@ -8,10 +8,12 @@ def formatIt(string):
     string = str(string)
     return string.replace(" ", "\ ").replace(")", "\)").replace("(", "\(")
 
+
 path = os.getcwd() + "/" + sys.argv[1]
 args = ""
-for i in range(2,len(sys.argv)):
-    args+=" "+sys.argv[i]
+for i in range(2, len(sys.argv)):
+    args += " " + sys.argv[i]
+
 
 def confirm():
     inp = str(input("would u like to proceed?[y/n]: "))
