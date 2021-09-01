@@ -7,14 +7,24 @@ import argparse
 def formatIt(string):
     string = str(string)
     return string.replace(" ", "\ ").replace(")", "\)").replace("(", "\(")
-
-
-path = sys.argv[1] if sys.argv[1][0:14]=="/Users/ibrahim" else os.getcwd() + "/" + sys.argv[1]
+pathIndex = -1
+for i in range(1,len(sys.argv)):
+    if(not sys.argv[i].find("/")==-1 or not sys.argv[i].find(".")==-1):
+        pathIndex=i
+path = (
+    sys.argv[pathIndex]
+    if sys.argv[1][0:14] == "/Users/ibrahim"
+    else os.getcwd() + "/" + sys.argv[pathIndex]
+)
 args = ""
-for i in range(2, len(sys.argv)):
+for i in range(pathIndex + 1, len(sys.argv)):
     args += " " + sys.argv[i]
+options = ""
+for i in range(1, pathIndex):
+    options += " " + sys.argv[i]
 
-
+# print(options)
+# print(args)
 def confirm():
     inp = str(input("would u like to proceed?[y/n]: "))
     while not (inp == "y"):
