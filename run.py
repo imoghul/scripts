@@ -9,7 +9,7 @@ def formatIt(string):
     return string.replace(" ", "\ ").replace(")", "\)").replace("(", "\(")
 
 
-path = os.getcwd() + "/" + sys.argv[1]
+path = sys.argv[1] if sys.argv[1][0:14]=="/Users/ibrahim" else os.getcwd() + "/" + sys.argv[1]
 args = ""
 for i in range(2, len(sys.argv)):
     args += " " + sys.argv[i]
