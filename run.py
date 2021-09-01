@@ -7,10 +7,12 @@ import argparse
 def formatIt(string):
     string = str(string)
     return string.replace(" ", "\ ").replace(")", "\)").replace("(", "\(")
+
+
 pathIndex = -1
-for i in range(1,len(sys.argv)):
-    if(not sys.argv[i].find("/")==-1 or not sys.argv[i].find(".")==-1):
-        pathIndex=i
+for i in range(1, len(sys.argv)):
+    if not sys.argv[i].find("/") == -1 or not sys.argv[i].find(".") == -1:
+        pathIndex = i
 path = (
     sys.argv[pathIndex]
     if sys.argv[1][0:14] == "/Users/ibrahim"
