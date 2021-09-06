@@ -3,6 +3,7 @@ import sys
 import os
 import argparse
 
+if(len(sys.argv)<2): exit()
 
 def formatIt(string):
     string = str(string)
