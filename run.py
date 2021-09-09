@@ -82,7 +82,8 @@ def runSmart(extension):
 def removeExecutables():
     os.system("find . -name '*.class' -delete")
     os.system("find . -name '%s' -delete" % fileNoExtension)
-
+    os.system("rm -rf __pycache__")
+    os.system("find . -name '*.pyc' -delete")
 
 print("\n")
 goTo(pathTo)
