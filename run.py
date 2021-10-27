@@ -3,7 +3,9 @@ import sys
 import os
 import argparse
 
-if(len(sys.argv)<2): exit()
+if len(sys.argv) < 2:
+    exit()
+
 
 def formatIt(string):
     string = str(string)
@@ -84,6 +86,7 @@ def removeExecutables():
     os.system("find . -name '%s' -delete" % fileNoExtension)
     os.system("rm -rf __pycache__")
     os.system("find . -name '*.pyc' -delete")
+
 
 print("\n")
 goTo(pathTo)
