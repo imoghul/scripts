@@ -11,7 +11,8 @@ def formatIt(string):
     return str(string).replace(" ", "\ ").replace(")", "\)").replace("(", "\(")
 
 
-def sort(doctype):
+def sort(doctype,folder=None):
+    if type(folder) == type(None): folder=doctype
     files = glob.glob("/Users/ibrahim/Downloads/*.%s" % doctype)
     detected = []
     tbRem = []
@@ -40,16 +41,18 @@ def sort(doctype):
         string = (
             "mv "
             + formatIt(i)
-            + " /Users/ibrahim/Downloads/%s/" % doctype
+            + " /Users/ibrahim/Downloads/%s/" % folder
             + formatIt(i).replace("/Users/ibrahim/Downloads/", "")
         )
         os.system(string)
 
 sort("pdf")
-sort("docx")
-sort("ppt")
-sort("txt")
 sort("doc")
+sort("docx","doc")
+sort("ppt")
+sort("pptx","ppt")
+sort("txt")
 sort("HEIC")
+sort("xlsx")
 
 exit()
