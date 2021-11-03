@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-dir=/Users/ibrahim/scripts/declutter.py
+/Users/ibrahim/scripts/declutter.py
 notifier=/usr/local/bin/terminal-notifier
 
-cd $dir
 $notifier -title Declutter -subtitle "Daily Updated" -message "Completed"
 now=$(date)
 echo "Cron job update completed at $now"
