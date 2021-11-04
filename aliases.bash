@@ -5,3 +5,5 @@ alias c="clear && pwd && echo && ls"
 alias ll='ls -alF'
 alias l='ls -CF'
 alias la="ls -a"
+alias ncsussh="ssh immoghul@remote.eos.ncsu.edu"
+alias rpissh="ssh pi@ibrahimpi.local"
