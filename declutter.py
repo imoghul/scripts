@@ -36,7 +36,7 @@ def sort(doctype, folder=None):
     if len(tbRem) == 0:
         return
     for i in tbRem:
-        print(str(i) + " will be deleted")
+        print(str(i).replace("/Users/ibrahim/Downloads","") + " will be deleted")
 
     for i in tbRem:
         string = (
