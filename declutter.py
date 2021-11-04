@@ -18,7 +18,7 @@ def sort(doctype, folder=None):
     detected = []
     tbRem = []
     for f in files:
-        if True:  # ((f[25:len(f)])[0:16]=="Scanned Document"):
+        if f[25]!="~":  # ((f[25:len(f)])[0:16]=="Scanned Document"):
             detected.append(f)
     currTime = datetime.strptime(
         time.strftime("%Y-%m-%d %H:%M:%S", gmtime()), "%Y-%m-%d %H:%M:%S"
@@ -34,6 +34,7 @@ def sort(doctype, folder=None):
         if timeDiff.total_seconds() / 3600 > 1:
             tbRem.append(e)
     if len(tbRem) == 0:
+        print("No %s's to declutter"%doctype)
         return
     for i in tbRem:
         print(str(i).replace("/Users/ibrahim/Downloads","") + " will be deleted")
