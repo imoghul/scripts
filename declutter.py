@@ -14,7 +14,7 @@ def formatIt(string):
 def sort(doctype, folder=None):
     if type(folder) == type(None):
         folder = doctype
-    files = glob.glob("/Users/ibrahim/Downloads/*.%s" % doctype)
+    files = (glob.glob("/Users/ibrahim/Downloads/*.%s" % doctype.lower())) + (glob.glob("/Users/ibrahim/Downloads/*.%s" % doctype.upper()))
     detected = []
     tbRem = []
     for f in files:
@@ -58,7 +58,6 @@ sort("txt")
 sort("HEIC")
 sort("xlsx")
 sort("png")
-sort("PNG","png")
 sort("jpg")
 sort("jpeg")
 
