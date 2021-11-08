@@ -12,7 +12,7 @@ def formatIt(string):
 
 
 def sort(doctype, folder=None):
-    if type(folder) == type(None):
+    if folder == None:
         folder = doctype
     files = (glob.glob("/Users/ibrahim/Downloads/*.%s" % doctype.lower())) + (glob.glob("/Users/ibrahim/Downloads/*.%s" % doctype.upper()))
     detected = []
