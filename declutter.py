@@ -59,6 +59,6 @@ sort("HEIC")
 sort("xlsx")
 sort("png")
 sort("jpg")
-sort("jpeg")
+sort("jpeg","jpg")
 
 exit()
