@@ -59,13 +59,10 @@ astyle --recursive "$PWD/*.java"\
     --errors-to-stdout \
     --quiet \
     >/dev/null 2>&1
-black -q $PWD/*.py \
-    >/dev/null 2>&1
-js-beautify $PWD/*.js \
-    >/dev/null 2>&1
-js-beautify $PWD/*.html \
-    >/dev/null 2>&1
-js-beautify $PWD/*.css \
-    >/dev/null 2>&1
+    
+find . -name "*.py" -exec black '{}' \; >/dev/null 2>&1;
+find . -name "*.js" -exec js-beautify '{}' \; >/dev/null 2>&1
+find . -name "*.html" -exec js-beautify '{}' \; >/dev/null 2>&1
+find . -name "*.css" -exec js-beautify '{}' \; >/dev/null 2>&1
 
 find . -name "*.orig" -delete
