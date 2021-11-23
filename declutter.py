@@ -6,6 +6,8 @@ import time
 from time import gmtime
 from datetime import datetime, date
 
+pathToDownloads="/Users/ibrahim/Downloads"
+os.chdir(pathToDownloads)
 
 def formatIt(string):
     return str(string).replace(" ", "\ ").replace(")", "\)").replace("(", "\(")
@@ -14,13 +16,14 @@ def formatIt(string):
 def sort(doctype, folder=None):
     if folder == None:
         folder = doctype
-    files = (glob.glob("/Users/ibrahim/Downloads/*.%s" % doctype.lower())) + (
-        glob.glob("/Users/ibrahim/Downloads/*.%s" % doctype.upper())
+    
+    files = (glob.glob("*.%s" % doctype.lower())) + (
+        glob.glob("*.%s" % doctype.upper())
     )
     detected = []
     tbRem = []
     for f in files:
-        if f[25] != "~":  # ((f[25:len(f)])[0:16]=="Scanned Document"):
+        if f[0] != "~":  # ((f[25:len(f)])[0:16]=="Scanned Document"):
             detected.append(f)
     currTime = datetime.strptime(
         time.strftime("%Y-%m-%d %H:%M:%S", gmtime()), "%Y-%m-%d %H:%M:%S"
@@ -39,14 +42,14 @@ def sort(doctype, folder=None):
         print("No %s's to declutter" % doctype)
         return
     for i in tbRem:
-        print(str(i).replace("/Users/ibrahim/Downloads", "") + " will be deleted")
+        print(str(i) + " will be deleted")
 
     for i in tbRem:
         string = (
             "mv "
             + formatIt(i)
-            + " /Users/ibrahim/Downloads/%s/" % folder
-            + formatIt(i).replace("/Users/ibrahim/Downloads/", "")
+            + " %s/" % folder
+            + formatIt(i)
         )
         os.system(string)
 
