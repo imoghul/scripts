@@ -1,3 +1,4 @@
+PS1="%B%F{256}%n%f%b %U%1~%u %#  🚨🚩"
 alias declutter="python3 ~/scripts/declutter.py"
 alias style="~/scripts/style.sh"
 alias run="~/scripts/run.py"
