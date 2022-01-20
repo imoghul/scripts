@@ -2,6 +2,7 @@ if [ "$(uname)" == "Darwin" ]; then
      PS1="%B%F{256}%n%f%b %U%1~%u %#  🚨🚩"
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
      PS1="\u \w %  🚨🚩"
+fi
 alias declutter="python3 ~/scripts/declutter.py"
 alias style="~/scripts/style.sh"
 alias run="~/scripts/run.py"
