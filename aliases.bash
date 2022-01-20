@@ -13,7 +13,7 @@ alias rpissh="ssh pi@ibrahimpi.local"
 #     PS1="\u \w %  🚨🚩"
 #fi
 case "$OSTYPE" in
-  linux*)   PS1="\u \w %  🚨🚩" ;;
+  linux*)   PS1="\u \w %  " ;;
   darwin*)  PS1="%B%F{256}%n%f%b %U%1~%u %#  🚨🚩" ;; 
   *)        echo "unknown: $OSTYPE" ;;
 esac
