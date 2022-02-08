@@ -4,6 +4,7 @@
 Install astyle: http://astyle.sourceforge.net/install.html
 Install nodejs
 ```console
+brew install astyle
 python3 -m pip install black
 npm install js-beautify
 python3 -m pip install datetime
