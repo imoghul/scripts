@@ -30,7 +30,7 @@ for i in range(1, pathIndex):
     args += " " + sys.argv[i]
 
 args += " "
-print(pathIndex)
+#print(pathIndex)
 def confirm():
     inp = str(input("would u like to proceed?[y/n]: "))
     while not (inp == "y"):
@@ -78,7 +78,7 @@ def runSmart(extension):
         print("please use a valid extension")
         return
     if command != None:
-        print(command)
+        #print(command)
         os.system(command)
 
 
