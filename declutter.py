@@ -39,7 +39,7 @@ def sort(doctype, folder=None):
         if timeDiff.total_seconds() / 3600 > 1:
             tbRem.append(e)
     if len(tbRem) == 0:
-        print("No %s's to declutter" % doctype)
+        #print("No %s's to declutter" % doctype)
         return
     for i in tbRem:
         print(str(i) + " will be deleted")
