@@ -40,9 +40,9 @@ def sort(doctype, folder=None):
             tbRem.append(e)
     if len(tbRem) == 0:
         #print("No %s's to declutter" % doctype)
-        return
+        return True
     for i in tbRem:
-        print(str(i) + " will be deleted")
+        print(str(i))# + " will be deleted")
 
     for i in tbRem:
         string = (
@@ -53,18 +53,6 @@ def sort(doctype, folder=None):
         )
         os.system(string)
 
-
-sort("pdf")
-sort("doc")
-sort("docx", "doc")
-sort("ppt")
-sort("pptx", "ppt")
-sort("txt")
-sort("HEIC")
-sort("xlsx")
-sort("xls","xlsx")
-sort("png")
-sort("jpg")
-sort("jpeg", "jpg")
-
+if (sort("pdf") and sort("doc") and sort("docx", "doc") and sort("ppt") and sort("pptx", "ppt") and sort("txt") and sort("HEIC") and sort("xlsx") and sort("xls","xlsx") and sort("png") and sort("jpg") and sort("jpeg", "jpg")):
+    print("Already clean!")
 exit()

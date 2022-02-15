@@ -3,5 +3,5 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         python3 $(locate declutter.py)
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 	notifier=/usr/local/bin/terminal-notifier
-	$notifier -title Declutter -subtitle "Files:" -message "$(python3 $(locate declutter.py))"
+	$notifier -title Declutter -subtitle "Deleted Files:" -message "$(python3 $(locate declutter.py))"
 fi
