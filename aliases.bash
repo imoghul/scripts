@@ -12,8 +12,18 @@ alias rpissh="ssh pi@ibrahimpi.local"
 #elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
 #     PS1="\u \w %  🚨🚩"
 #fi
+
+
 case "$OSTYPE" in
   linux*)   PS1="\u \w %  " ;;
   darwin*)  PS1="%B%F{256}%n%f%b %U%1~%u %#  🚨🚩" ;; 
   *)        echo "unknown: $OSTYPE" ;;
 esac
+if [[ "$TERM" = xterm ]] ; then
+    if [[ "$OSTYPE" = darwin* ]] ; then
+        PS1='%2~$ '
+    fi
+    if [[ "$OSTYPE" = linux* ]] ; then
+        PS1='\u$ '
+    fi
+fi
