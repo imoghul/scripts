@@ -52,7 +52,10 @@ def sort(doctype, folder=None):
             + formatIt(i)
         )
         os.system(string)
-
-if (sort("pdf") and sort("doc") and sort("docx", "doc") and sort("ppt") and sort("pptx", "ppt") and sort("txt") and sort("HEIC") and sort("xlsx") and sort("xls","xlsx") and sort("png") and sort("jpg") and sort("jpeg", "jpg")):
-    print("Already clean!")
+    return False
+res = [sort("pdf"),  sort("doc") , sort("docx", "doc") , sort("ppt") , sort("pptx", "ppt") , sort("txt") , sort("HEIC") , sort("xlsx") , sort("xls","xlsx") , sort("png") , sort("jpg") , sort("jpeg", "jpg")]
+val = True
+for r in res:
+    val &= r
+if val: print("Already clean!")
 exit()
