@@ -74,6 +74,8 @@ def runSmart(extension):
             + file
             + '"'
         )
+    elif extension == "v":
+	command = "     vlog *.v && vsim -c " + fileNoExtension
     else:
         print("please use a valid extension")
         return
