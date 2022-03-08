@@ -6,7 +6,7 @@ import time
 from time import gmtime
 from datetime import datetime, date
 
-pathToDownloads=os.path.expanduser("~")+"/Downloads"#"/Users/ibrahim/Downloads"
+pathToDownloads=os.path.expanduser("~")+"/Downloads"
 os.chdir(pathToDownloads)
 
 def formatIt(string):
