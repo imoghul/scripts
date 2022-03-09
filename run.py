@@ -32,9 +32,7 @@ for i in range(1, pathIndex):
 args += " "
 #print(pathIndex)
 def confirm():
-    inp = str(input("would u like to proceed?[y/n]: "))
-    while not (inp == "y"):
-        inp = str(input("would u like to proceed?[y/n]: "))
+    while not (str(input("would u like to proceed?[y/n]: ")) == "y"):pass
 
 
 def goTo(pathing):  # goes to the path
