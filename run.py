@@ -48,7 +48,7 @@ extention = file.split(".")[1] if not file.find(".") == -1 else ""
 fileNoExtension = file.split(".")[0] if not file.find(".") == -1 else ""
 
 
-def runSmart(extension):
+def runSmart(extension,args,options):
     command = None
     if extension == "java":
         command = "     javac " + args + file + options + " && java " + fileNoExtension
@@ -73,7 +73,10 @@ def runSmart(extension):
             + '"'
         )
     elif extension == "v":
-	command = "     vlog *.v && vsim -c " + fileNoExtension
+	if args.find("-v")!=-1: 
+		args = ' -voptargs="+acc" -do "log -r *;run -all;exit" '
+		options = " && vsim vsim.wlf &"
+	command = "     vlog *.v && vsim -c" + args + fileNoExtension + options
     else:
         print("please use a valid extension")
         return
@@ -91,7 +94,7 @@ def removeExecutables():
 
 print("\n")
 goTo(pathTo)
-runSmart(extention)
+runSmart(extention,args,options)
 removeExecutables()
 print("\n")
 exit()
