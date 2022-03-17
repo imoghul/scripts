@@ -58,7 +58,7 @@ def runSmart(extension,args,options):
         )
     elif extension == "c":
         command = (
-            "     gcc -o " + args + fileNoExtension + options + " " + file + " && ./" + fileNoExtension
+            "     gcc " + args + " -o " + fileNoExtension + options + " " + file + " && ./" + fileNoExtension
         )
     elif extension == "py":
         command = "     python3 " + args + file + options
