@@ -7,7 +7,7 @@ alias l='ls -CF'
 alias la="ls -a"
 alias ncsussh="ssh immoghul@remote.eos.ncsu.edu"
 alias rpissh="ssh pi@ibrahimpi.local"
-alias grendel="ssh -X immoghul@grendel.ece.ncsu.edu"
+alias grendel="ssh -Y immoghul@grendel.ece.ncsu.edu"
 alias wheather="curl wttr.in"
 
 case "$OSTYPE" in
