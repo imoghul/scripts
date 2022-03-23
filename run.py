@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import sys
 import os
 import argparse
@@ -58,7 +58,7 @@ def runSmart(extension,args,options):
         )
     elif extension == "c":
         command = (
-            "     gcc -o " + args + fileNoExtension + options + " " + file + " && ./" + fileNoExtension
+            "     gcc " + args + " -o " + fileNoExtension + options + " " + file + " && ./" + fileNoExtension
         )
     elif extension == "py":
         command = "     python3 " + args + file + options
@@ -73,10 +73,10 @@ def runSmart(extension,args,options):
             + '"'
         )
     elif extension == "v":
-	if args.find("-v")!=-1: 
-		args = ' -voptargs="+acc" -do "log -r *;run -all;exit" '
-		options = " && vsim vsim.wlf &"
-	command = "     vlog *.v && vsim -c" + args + fileNoExtension + options
+        if args.find("-v")!=-1:
+            args = ' -voptargs="+acc" -do "log -r *;run -all;exit" '
+            options = " && vsim vsim.wlf &"
+        command = "     vlog *.v && vsim -c" + args + fileNoExtension + options
     else:
         print("please use a valid extension")
         return

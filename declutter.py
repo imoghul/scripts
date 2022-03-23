@@ -16,7 +16,7 @@ def formatIt(string):
 def sort(doctype, folder=None):
     if folder == None:
         folder = doctype
-    
+
     files = (glob.glob("*.%s" % doctype.lower())) + (
         glob.glob("*.%s" % doctype.upper())
     )
