@@ -81,7 +81,7 @@ def runSmart(extension,args,options):
         print("please use a valid extension")
         return
     if command != None:
-        #print(command)
+        print(command)
         os.system(command)
 
 
