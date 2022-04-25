@@ -30,9 +30,10 @@ for i in range(1, pathIndex):
     args += " " + sys.argv[i]
 
 args += " "
-#print(pathIndex)
+# print(pathIndex)
 def confirm():
-    while not (str(input("would u like to proceed?[y/n]: ")) == "y"):pass
+    while not (str(input("would u like to proceed?[y/n]: ")) == "y"):
+        pass
 
 
 def goTo(pathing):  # goes to the path
@@ -48,17 +49,32 @@ extention = file.split(".")[1] if not file.find(".") == -1 else ""
 fileNoExtension = file.split(".")[0] if not file.find(".") == -1 else ""
 
 
-def runSmart(extension,args,options):
+def runSmart(extension, args, options):
     command = None
     if extension == "java":
         command = "     javac " + args + file + options + " && java " + fileNoExtension
     elif extension == "cpp":
         command = (
-            "     g++ -o " + args + fileNoExtension + options + " " + file + " && ./" + fileNoExtension
+            "     g++ -o "
+            + args
+            + fileNoExtension
+            + options
+            + " "
+            + file
+            + " && ./"
+            + fileNoExtension
         )
     elif extension == "c":
         command = (
-            "     gcc " + args + " -o " + fileNoExtension + options + " " + file + " && ./" + fileNoExtension
+            "     gcc "
+            + args
+            + " -o "
+            + fileNoExtension
+            + options
+            + " "
+            + file
+            + " && ./"
+            + fileNoExtension
         )
     elif extension == "py":
         command = "     python3 " + args + file + options
@@ -73,7 +89,7 @@ def runSmart(extension,args,options):
             + '"'
         )
     elif extension == "v":
-        if args.find("-v")!=-1:
+        if args.find("-v") != -1:
             args = ' -voptargs="+acc" -do "log -r *;run -all;exit" '
             options = " && vsim vsim.wlf &"
         command = "     vlog *.v && vsim -c" + args + fileNoExtension + options
@@ -94,7 +110,7 @@ def removeExecutables():
 
 print("\n")
 goTo(pathTo)
-runSmart(extention,args,options)
+runSmart(extention, args, options)
 removeExecutables()
 print("\n")
 exit()

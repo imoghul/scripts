@@ -6,8 +6,9 @@ import time
 from time import gmtime
 from datetime import datetime, date
 
-pathToDownloads=os.path.expanduser("~")+"/Downloads"
+pathToDownloads = os.path.expanduser("~") + "/Downloads"
 os.chdir(pathToDownloads)
+
 
 def formatIt(string):
     return str(string).replace(" ", "\ ").replace(")", "\)").replace("(", "\(")
@@ -39,23 +40,34 @@ def sort(doctype, folder=None):
         if timeDiff.total_seconds() / 3600 > 1:
             tbRem.append(e)
     if len(tbRem) == 0:
-        #print("No %s's to declutter" % doctype)
+        # print("No %s's to declutter" % doctype)
         return True
     for i in tbRem:
-        print(str(i))# + " will be deleted")
+        print(str(i))  # + " will be deleted")
 
     for i in tbRem:
-        string = (
-            "mv "
-            + formatIt(i)
-            + " %s/" % folder
-            + formatIt(i)
-        )
+        string = "mv " + formatIt(i) + " %s/" % folder + formatIt(i)
         os.system(string)
     return False
-res = [sort("pdf"),  sort("doc") , sort("docx", "doc") , sort("ppt") , sort("pptx", "ppt") , sort("txt") , sort("HEIC") , sort("xlsx") , sort("xls","xlsx") , sort("png") , sort("jpg") , sort("jpeg", "jpg")]
+
+
+res = [
+    sort("pdf"),
+    sort("doc"),
+    sort("docx", "doc"),
+    sort("ppt"),
+    sort("pptx", "ppt"),
+    sort("txt"),
+    sort("HEIC"),
+    sort("xlsx"),
+    sort("xls", "xlsx"),
+    sort("png"),
+    sort("jpg"),
+    sort("jpeg", "jpg"),
+]
 val = True
 for r in res:
     val &= r
-if val: print("Already clean!")
+if val:
+    print("Already clean!")
 exit()
