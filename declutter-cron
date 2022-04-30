@@ -6,4 +6,4 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 	echo $files
 	terminal-notifier -title Declutter -subtitle "Deleted Files:" -message "$files"
 fi
-rm ~/Downloads/*.docx ~/Downloads/*.pptx ~/Downloads/*.xlsx
+rm ~/Downloads/*.docx ~/Downloads/*.pptx ~/Downloads/*.xlsx >/dev/null 2>&1
