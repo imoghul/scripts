@@ -2,7 +2,7 @@
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         python3 $(locate declutter.py)
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-        mv /Users/ibrahimmoghul/Library/CloudStorage/OneDrive-Personal/Documents/Office\ Lens/* ~/Downloads
+        mv /Users/ibrahimmoghul/Library/CloudStorage/OneDrive-Personal/Documents/Office\ Lens/* ~/Downloads >/dev/null 2>&1
 	files=$(python3 $(locate declutter.py))
 	echo $files
 	terminal-notifier -title Declutter -subtitle "Deleted Files:" -message "$files"

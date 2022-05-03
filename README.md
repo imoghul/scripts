@@ -5,6 +5,7 @@
 brew install astyle
 python3 -m pip install black
 npm install js-beautify
+python3 -m pip install beautysh
 python3 -m pip install datetime
 echo "source aliases.bash" >> ~/.zshrc
 ```
