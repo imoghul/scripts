@@ -17,3 +17,10 @@ echo "source aliases.bash" >> ~/.zshrc
 * pdfRemover : remove pdfs from Downloads folder and put them in "pdfs" folder in home directory
 * rpi : ssh into my pi
 * run : runs programs
+
+
+## Configs
+
+* Move config to .config/i3/config
+* Move i3status.conf to /etc/
+* Keep .conkyrc
