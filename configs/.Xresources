@@ -38,10 +38,10 @@
 *.color15: #fdf6e3
 
 !! URxvt Appearance
-!!URxvt.font: Iosevka 
-!!URxvt.boldFont: Iosevka 
-!!URxvt.italicFont: Iosevka
-!!URxvt.boldItalicfont: Iosevka
+URxvt.font: Iosevka 
+URxvt.boldFont: Iosevka 
+URxvt.italicFont: Iosevka
+URxvt.boldItalicfont: Iosevka
 URxvt.letterSpace: 0
 URxvt.lineSpace: 0
 URxvt.geometry: 92x24
