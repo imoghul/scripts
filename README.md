@@ -24,3 +24,11 @@ echo "source aliases.bash" >> ~/.zshrc
 * Move config to .config/i3/config
 * Move i3status.conf to /etc/
 * Keep .conkyrc
+* Move .Xresources to ~
+* Move urxvt/\* to ~/.urxvt
+
+## Set theme
+* Download .ttc file at put it in ~/.fonts
+* launch lxappearance, make a small change and look for .gtkrc-x.x
+* change the font to the correct name
+* do this in .config/gtk-3.0/settings.ini aswell
