@@ -25,3 +25,4 @@ if [[ "$TERM" = xterm ]] ; then
         PS1='\u$ '
     fi
 fi
+alias batteryLevel="cat /sys/class/power_supply/BAT0/capacity"
