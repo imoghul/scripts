@@ -10,6 +10,8 @@ alias rpissh="ssh pi@ibrahimpi.local"
 alias grendel="ssh -Y immoghul@grendel.ece.ncsu.edu"
 alias wheather="resize -s 42 125 && curl wttr.in"
 alias recompileURxvt="xrdb ~/.Xresources"
+alias backlight="~/scripts/kbdbacklight.sh"
+alias brightness="xrandr --output $(xrandr -q | grep ' connected' | head -n 1 | cut -d ' ' -f1) --brightness"
 case "$(which zsh)" in
   *bash*)   PS1="\u \w %  " ;;
   *zsh*)  PROMPT="%B%F{256}%n%f%b %U%1~%u %# " ;;
