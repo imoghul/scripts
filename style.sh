@@ -67,5 +67,5 @@ find . -name "*.html" -exec js-beautify '{}' \; >/dev/null 2>&1
 find . -name "*.css" -exec js-beautify '{}' \; >/dev/null 2>&1
 find . -name "*.sh" -exec beautysh '{}' \; >/dev/null 2>&1
 find . -name "*.bash" -exec beautysh '{}' \; >/dev/null 2>&1
-
+find . -name "*.v" -exec verilog-format -f '{}' \; >/dev/null 2>&1
 find . -name "*.orig" -delete
