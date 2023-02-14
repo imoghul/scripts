@@ -89,15 +89,18 @@ def runSmart(extension, args, options):
             + '"'
         )
     elif extension == "v":
+        simulator = input("Type 1 for modelsim, and anything else for icarus: ")=="1"
         if args.find("-v") != -1:
             args = ' -voptargs="+acc" -do "log -r *;run -all;exit" '
             options = " && vsim vsim.wlf &"
+        
         command = "     vlog *.v && vsim -c" + args + fileNoExtension + options
+        if not simulator: command = "   iverilog -o %s *.v && vvp -n %s" % (fileNoExtension,fileNoExtension) + " && gtkwave %s.vcd" % (fileNoExtension) if args.find("-v")!=-1 else ""
     else:
         print("please use a valid extension")
         return
     if command != None:
-        print(command)
+        print(command+"\n")
         os.system(command)
 
 
@@ -106,6 +109,7 @@ def removeExecutables():
     os.system("find . -name '%s' -delete" % fileNoExtension)
     os.system("rm -rf __pycache__ > /dev/null 2>&1")
     os.system("find . -name '*.pyc' -delete")
+    os.system("find . -name '%s.vcd' -delete"%fileNoExtension)
 
 
 print("\n")
